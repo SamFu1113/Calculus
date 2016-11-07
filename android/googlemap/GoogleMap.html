@@ -11758,6 +11758,9 @@ div#notebook {
 <li><a href="#MarkThePosition">Mark the Position</a>: anchor the position</li>
 <li><a href="#Marker">Marker</a></li>
 <li><a href="#MarkerDraggable">Demo</a>; Demo of Marker Draggable</li>
+<li><a href="#DistanceMeasurement">How Far from Here</a> Distance Measurement</li>
+<li><a href="#AreaEstimation">Area Estimation</a> Estimate the Area of polygon</li>
+<li><a href="#Make-a-note-via-Google-Map">Make Note</a> List of Locations</li>
 </ul>
 
 </div>
@@ -11808,6 +11811,22 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Note-">Note <a class="anchor-link" href="#Note-">&#182;</a></h2><p>Here, type of maps is ROADP; other formats are</p>
+<ul>
+<li>MapTypeId.SATELLITE</li>
+<li>MapTypeId.HYBRID </li>
+<li>MapTypeId.TERRAIN </li>
+<li>MapTypeId.ROADMAP, defaulted.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Template">Template<a class="anchor-link" href="#Template">&#182;</a></h2><p>A simple demo:</p>
 <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -11822,14 +11841,14 @@ div#notebook {
           <span class="nx">zoom</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
           <span class="nx">mapTypeId</span><span class="o">:</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">MapTypeId</span><span class="p">.</span><span class="nx">ROADP</span>
         <span class="p">};</span>
-        <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;map_canvas&quot;</span><span class="p">),</span>
+        <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;map&quot;</span><span class="p">),</span>
             <span class="nx">mapOptions</span><span class="p">);</span>
       <span class="p">}</span>
 
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span> <span class="na">onload</span><span class="o">=</span><span class="s">&quot;initialize()&quot;</span><span class="p">&gt;</span>
-     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;map_canvas&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 600px;height: 400px;&quot;</span><span class="p">/&gt;</span>
+     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;map&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 600px;height: 400px;&quot;</span><span class="p">/&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
@@ -11844,7 +11863,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="CSSModification">CSSModification<a class="anchor-link" href="#CSSModification">&#182;</a></h2><p>Except given the option of size of "map_canvas", we can aslo use CSS to set the size of Canvas of Map</p>
 <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-    <span class="nt">html</span><span class="o">,</span> <span class="nt">body</span><span class="o">,</span> <span class="nn">#map_canvas</span> <span class="p">{</span>
+    <span class="nt">html</span><span class="o">,</span> <span class="nt">body</span><span class="o">,</span> <span class="nn">#map</span> <span class="p">{</span>
         <span class="nb">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
         <span class="nb">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
         <span class="nb">margin</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
@@ -21492,7 +21511,8 @@ nmH+hlkuaBn/b/Z3e9qkwfvu/+w3z7+s+e7986/n/937bj69Ze3f1jvtBdO8wJoZJdJMe9/Nds0y
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="DistanceMeasurement">DistanceMeasurement<a class="anchor-link" href="#DistanceMeasurement">&#182;</a></h2><ol>
+<h2 id="DistanceMeasurement">DistanceMeasurement<a class="anchor-link" href="#DistanceMeasurement">&#182;</a></h2><p><a href="codes/GPSCoord-2.html">Codes, GPSCoord-2.html</a></p>
+<ol>
 <li>To access the function of distance measurement requires <font color="brown">geometry</font> libarary:</li>
 </ol>
 <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -21527,7 +21547,35 @@ nmH+hlkuaBn/b/Z3e9qkwfvu/+w3z7+s+e7986/n/937bj69Ze3f1jvtBdO8wJoZJdJMe9/Nds0y
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3>Make a note via Google Map</h3><p>Create an arraay of latitude/longitude list for which we are interested. Move the marker to the place which we select from the HTML options.</p>
+<h2 id="Sketch">Sketch<a class="anchor-link" href="#Sketch">&#182;</a></h2><div class="highlight"><pre><span></span>HTML
+            defaulted Lat/Lng                                     JavaScript
+
+     Latitude: (defaultLat)  Longitude: (defaultLng)    google.maps.event.addListener(,,function(evt))
+                   |                        |                      :
+                   |                        |                      :    
+                   ▼                       ▼                      :
+                 newLat                   newLng                   :    waiting for position changed
+                   ▲                        ▲                      :
+                   |                        |                      :
+            evt.latLng.lat()  ◄-..  evt.latLng.lng() ◄------------ ┤    If dragged
+                                                                   :
+                                                                   :
+           <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;distanceAB&quot;</span><span class="p">&gt;</span>     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>                        :
+                                  ▲                                :          
+                                  └ -------------------------------┘ 
+                   google.maps.geometry.spherical.computeDistanceBetween(loc1,loc2)
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3>Make a note via Google Map</h3><p><a href="GPSCoord-3.html">Codes, GPSCoord-3.html</a></p>
+<p>Create an arraay of latitude/longitude list for which we are interested. Move the marker to the place which we select from the HTML options.</p>
 
 </div>
 </div>
@@ -21565,9 +21613,9 @@ nmH+hlkuaBn/b/Z3e9qkwfvu/+w3z7+s+e7986/n/937bj69Ze3f1jvtBdO8wJoZJdJMe9/Nds0y
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p><big>Array in Javascript</big>
-<br></p>
-<p>var loc = [[25.034225,121.390168],[25.032047,121.386692],[25.032514, 121.390661]]</p>
+<li><big>Array in Javascript</big>
+<br><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">loc</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">25.034225</span><span class="p">,</span><span class="mf">121.390168</span><span class="p">],[</span><span class="mf">25.032047</span><span class="p">,</span><span class="mf">121.386692</span><span class="p">],[</span><span class="mf">25.032514</span><span class="p">,</span> <span class="mf">121.390661</span><span class="p">]]</span>
+</pre></div>
 </li>
 </ul>
 
@@ -21580,7 +21628,7 @@ nmH+hlkuaBn/b/Z3e9qkwfvu/+w3z7+s+e7986/n/937bj69Ze3f1jvtBdO8wJoZJdJMe9/Nds0y
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><big>show the marker at the place on the map while option  was selected:</big>
+<li><big>show the marker at the place on the map while option  was selected (i.e. `[Element]`.<font color="brown">onchange</font>):</big>
 <br></li>
 </ul>
 <div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;PosMenu&#39;</span><span class="p">).</span><span class="nx">onchange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -21618,151 +21666,6 @@ nmH+hlkuaBn/b/Z3e9qkwfvu/+w3z7+s+e7986/n/937bj69Ze3f1jvtBdO8wJoZJdJMe9/Nds0y
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
-
-cat GPSCoord-3.html
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;!doctype html&gt;
-&lt;html lang=&#34;en&#34;&gt;
-&lt;head&gt;
-	&lt;meta charset=&#34;utf-8&#34; /&gt;
-	&lt;title&gt;&lt;/title&gt;
-	&lt;script type=&#34;text/javascript&#34;   
-	   src=&#34;http://maps.google.com/maps/api/js?sensor=true&amp;v=3&amp;libraries=geometry&#34;&gt;&lt;/script&gt;
-&lt;/head&gt;
-
-
-&lt;body&gt;
-
-	&lt;div id=&#34;map_canvas&#34; style=&#34;width: 600px;height: 400px;&#34;&gt;&lt;/div&gt;
-	&lt;br /&gt;
-	&lt;label for=&#34;latitude&#34;&gt;Latitude:&lt;/label&gt;
-	&lt;input id=&#34;latitude&#34; type=&#34;text&#34; value=&#34;&#34; /&gt;
-	&lt;label for=&#34;longitude&#34;&gt;Longitude:&lt;/label&gt;
-	&lt;input id=&#34;longitude&#34; type=&#34;text&#34; value=&#34;&#34; /&gt;
-	
-	&lt;br&gt;&lt;label&gt;	
-	The distance from Chang-Gung University to Destination: &lt;div id=&#34;distanceAB&#34;&gt;&lt;/div&gt;
-	&lt;label&gt;
-	&lt;br&gt;	
-	  The distance from Chang-Gung University to Destination
-	  &lt;select id=&#34;PosMenu&#34;&gt;
-              &lt;option value=&#34;0&#34;&gt;library&lt;/option&gt;
-              &lt;option value=&#34;1&#34;&gt;NSU&lt;/option&gt;
-              &lt;option value=&#34;2&#34;&gt;PO&lt;/option&gt;
-          &lt;/select&gt;
-	   &lt;div id=&#34;distanceAC&#34;&gt;&lt;/div&gt;
-	
-&lt;script type=&#34;text/javascript&#34;&gt;
-var myZoom = 16;
-var myMarkerIsDraggable = true;
-var myCoordsLenght = 6;
-var defaultLat = 25.035255529260443;
-var defaultLng = 121.389524;
-var loc1 = new google.maps.LatLng(25.035255529260443, 121.389524);
-
-var loc = [[25.034225,121.390168],[25.032047,121.386692],[25.032514, 121.390661]];
-
-function initialize() {
-    var mapOptions = {
-          center: new google.maps.LatLng(defaultLat,defaultLng),
-          zoom: myZoom,
-          mapTypeId: google.maps.MapTypeId.ROADP
-    };
-    var map = new google.maps.Map(document.getElementById(&#34;map_canvas&#34;),mapOptions);
-    // creates a draggable marker to the given coords   -3.118-3.118
-    
-    var myMarker = new google.maps.Marker({
-    position: new google.maps.LatLng(defaultLat, defaultLng),
-    draggable: myMarkerIsDraggable
-    }); 
-
-
-    google.maps.event.addListener(myMarker, &#39;dragend&#39;, function(evt){  
-        var newLat=evt.latLng.lat();
-        var newLng=evt.latLng.lng().toFixed(myCoordsLenght);
-	document.getElementById(&#39;latitude&#39;).value = newLat;
-	document.getElementById(&#39;longitude&#39;).value = newLng;
-	var loc2 = new google.maps.LatLng(newLat, newLng);
-	document.getElementById(&#39;distanceAB&#39;).innerHTML =
-	   Math.round(google.maps.geometry.spherical.computeDistanceBetween (loc1, loc2))+&#39;  m&#39;;
-
-    });
-    
-    // centers the map on markers coords
-    map.setCenter(myMarker.position);
-
-    // adds the marker on the map
-    myMarker.setMap(map);
-}
-
-google.maps.event.addDomListener(window, &#39;load&#39;, initialize);
-
-document.getElementById(&#39;PosMenu&#39;).onchange = function() {
-  var index = this.value; // array indices start at 0
-  //alert(loc[index][0]);
-  var loc2 = new google.maps.LatLng(loc[index][0], loc[index][1]);
-  document.getElementById(&#39;distanceAC&#39;).innerHTML =
-  Math.round(google.maps.geometry.spherical.computeDistanceBetween (loc1, loc2))+&#39;  m&#39;;
-  var newMarker = new google.maps.Marker({
-    position: new google.maps.LatLng(loc[index][0], loc[index][1]),
-    draggable: myMarkerIsDraggable
-  });
-
-  // centers the map on markers coords
-  var mapOptions = {
-          center: new google.maps.LatLng(defaultLat,defaultLng),
-          zoom: myZoom,
-          mapTypeId: google.maps.MapTypeId.ROADP
-    };
-
-   var map = new google.maps.Map(document.getElementById(&#34;map_canvas&#34;),mapOptions)
-
-   google.maps.event.addListener(newMarker, &#39;dragend&#39;, function(evt){  
-        var newLat=evt.latLng.lat();
-        var newLng=evt.latLng.lng().toFixed(myCoordsLenght);
-	document.getElementById(&#39;latitude&#39;).value = newLat;
-	document.getElementById(&#39;longitude&#39;).value = newLng;
-	var loc2 = new google.maps.LatLng(newLat, newLng);
-	document.getElementById(&#39;distanceAB&#39;).innerHTML =
-	   Math.round(google.maps.geometry.spherical.computeDistanceBetween (loc1, loc2))+&#39;  m&#39;;
-
-    });
-
-  map.setCenter(newMarker.position);
-
-  // adds the marker on the map
-  newMarker.setMap(map)
-
-}
-&lt;/script&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -21818,7 +21721,11 @@ document.getElementById(&#39;PosMenu&#39;).onchange = function() {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Practice">Practice<a class="anchor-link" href="#Practice">&#182;</a></h1><p>Make a squre around your dormitory and estimate the base area of the building.</p>
+<h2 id="Note">Note<a class="anchor-link" href="#Note">&#182;</a></h2><p><strong>1.</strong> How to get rid of app title bar?</p>
+<p>So small to display the unnecessary info. Modify the default setting of Theme in <font color="brown"> AndroidManifest.xml</font>:
+<img src="imgs/Themebefore.png" width=90% />
+<img src="imgs/Themeafter.png" width=90% /></p>
+<h2 id="The-result">The result<a class="anchor-link" href="#The-result">&#182;</a></h2><p><img src="imgs/NoTitleTheme.png" width=90% /></p>
 
 </div>
 </div>
@@ -22209,7 +22116,7 @@ document.getElementById(&#39;PosMenu&#39;).onchange = function() {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Marauders-Maps">Marauders Maps<a class="anchor-link" href="#Marauders-Maps">&#182;</a></h2><p>The Marauder's Map is a magical document that reveals all of Hogwarts School of Witchcraft and Wizardry.</p>
+<h1 id="Practice">Practice<a class="anchor-link" href="#Practice">&#182;</a></h1><p>Make a squre around your dormitory and estimate the base area of the building.</p>
 
 </div>
 </div>
@@ -22219,7 +22126,93 @@ document.getElementById(&#39;PosMenu&#39;).onchange = function() {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<h2 id="Marauders-Maps">Marauders Maps<a class="anchor-link" href="#Marauders-Maps">&#182;</a></h2><p>The Marauder's Map is a magical document that reveals all of Hogwarts School of Witchcraft and Wizardry.</p>
+<h2 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h2><p>Make a little tour guide around CGU:</p>
+<p><strong>1.</strong> object options:
+     <select id="PosMenu">
+        <option value="0">library</option>
+        <option value="1">NSU</option>
+        <option value="2">PO</option>
+    </select></p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">select</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;PosMenu&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>library<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>NSU<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span>PO<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+</pre></div>
+<p><strong>2.</strong> find out the coordinates of pointion during the trajectory from "A" to "B" and saved in an array:</p>
+<div class="highlight"><pre><span></span><span class="p">...</span> <span class="nx">settings</span> <span class="p">...</span>
+   <span class="kd">var</span> <span class="nx">loctoLib</span><span class="o">=</span><span class="p">[[</span><span class="mf">25.035236</span><span class="p">,</span> <span class="mf">121.389524</span><span class="p">],[</span><span class="mf">25.034225</span><span class="p">,</span><span class="mf">121.390168</span><span class="p">]];</span>
+   <span class="kd">var</span> <span class="nx">loctoNSU</span><span class="o">=</span><span class="p">[[</span><span class="mf">25.035236</span><span class="p">,</span><span class="mf">121.389524</span><span class="p">],[</span><span class="mf">25.034750</span><span class="p">,</span><span class="mf">121.389245</span><span class="p">],[</span><span class="mf">25.033991</span><span class="p">,</span><span class="mf">121.388494</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mf">25.034147</span><span class="p">,</span><span class="mf">121.388237</span><span class="p">],</span> <span class="p">[</span><span class="mf">25.033350</span><span class="p">,</span><span class="mf">121.387013</span><span class="p">],[</span><span class="mf">25.032125</span><span class="p">,</span><span class="mf">121.388022</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mf">25.0317170</span><span class="p">,</span><span class="mf">121.387464</span><span class="p">],[</span><span class="mf">25.0319892</span><span class="p">,</span><span class="mf">121.386692</span><span class="p">]];</span>
+   <span class="kd">var</span> <span class="nx">loctoPO</span><span class="o">=</span><span class="p">[[</span><span class="mf">25.035236</span><span class="p">,</span> <span class="mf">121.389524</span><span class="p">],[</span><span class="mf">25.032514</span><span class="p">,</span> <span class="mf">121.39066</span><span class="p">]];</span>
+   <span class="p">...</span>
+</pre></div>
+<p><strong>3.</strong> Wait for object decision:</p>
+<div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;PosMenu&#39;</span><span class="p">).</span><span class="nx">onchange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span> <span class="c1">// array indices start at 0</span>
+      <span class="kd">var</span> <span class="nx">loc2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">loc</span><span class="p">[</span><span class="nx">index</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">loc</span><span class="p">[</span><span class="nx">index</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;distanceAC&#39;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span>
+         <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">spherical</span><span class="p">.</span><span class="nx">computeDistanceBetween</span> <span class="p">(</span><span class="nx">loc1</span><span class="p">,</span> <span class="nx">loc2</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;  m&#39;</span><span class="p">;</span>
+       <span class="kd">var</span> <span class="nx">newMarker</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Marker</span><span class="p">({</span>
+       <span class="nx">position</span><span class="o">:</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">loc</span><span class="p">[</span><span class="nx">index</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">loc</span><span class="p">[</span><span class="nx">index</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span>
+                <span class="nx">draggable</span><span class="o">:</span> <span class="nx">myMarkerIsDraggable</span>
+       <span class="p">});</span>
+       <span class="p">...</span>
+</pre></div>
+<p><strong>4.</strong> make the locations of array while object chose:</p>
+<div class="highlight"><pre><span></span><span class="c1">// create the chosen tracjectory</span>
+       <span class="k">if</span> <span class="p">(</span><span class="nx">index</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">coord</span> <span class="o">=</span><span class="p">[];</span>
+          <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">loctoLib</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> 
+               <span class="nx">coord</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">loctoLib</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">loctoLib</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]));</span>
+          <span class="p">}</span>
+       <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">index</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">coord</span> <span class="o">=</span><span class="p">[];</span>
+          <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">loctoNSU</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> 
+              <span class="nx">coord</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">loctoNSU</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">loctoNSU</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]));</span>
+          <span class="p">}</span>
+       <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+         <span class="kd">var</span> <span class="nx">coord</span> <span class="o">=</span><span class="p">[];</span>
+         <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">loctoPO</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> 
+             <span class="nx">coord</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">loctoPO</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">loctoPO</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]));</span>
+         <span class="p">}</span>    
+       <span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>5.</strong> Make the trajectory according to given location array</p>
+<div class="highlight"><pre><span></span><span class="p">...</span>
+     <span class="kd">var</span> <span class="nx">TrajPath</span><span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Polyline</span><span class="p">({</span>
+         <span class="nx">path</span><span class="o">:</span> <span class="nx">coord</span><span class="p">,</span>
+         <span class="nx">geodesic</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nx">strokeColor</span><span class="o">:</span> <span class="s1">&#39;#FF0000&#39;</span><span class="p">,</span>
+         <span class="nx">strokeOpacity</span><span class="o">:</span> <span class="mf">0.8</span><span class="p">,</span>
+         <span class="nx">strokeWeight</span><span class="o">:</span> <span class="mi">2</span>
+     <span class="p">});</span>
+     <span class="nx">TrajPath</span><span class="p">.</span><span class="nx">setMap</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+     <span class="c1">// adds the marker on the map</span>
+     <span class="nx">newMarker</span><span class="p">.</span><span class="nx">setMap</span><span class="p">(</span><span class="nx">map</span><span class="p">)</span>
+   <span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Complete-Codes">Complete Codes<a class="anchor-link" href="#Complete-Codes">&#182;</a></h2><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
@@ -22246,8 +22239,8 @@ document.getElementById(&#39;PosMenu&#39;).onchange = function() {
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;map_canvas&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
       The distance from Chang-Gung University to Destination
       <span class="p">&lt;</span><span class="nt">select</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;PosMenu&quot;</span><span class="p">&gt;</span>
               <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>library<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
@@ -22255,20 +22248,21 @@ document.getElementById(&#39;PosMenu&#39;).onchange = function() {
               <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span>PO<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
           <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;distanceAC&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
 <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
    <span class="kd">var</span> <span class="nx">myZoom</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
-   <span class="kd">var</span> <span class="nx">myMarkerIsDraggable</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+   <span class="kd">var</span> <span class="nx">myMarkerIsDraggable</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
    <span class="kd">var</span> <span class="nx">myCoordsLenght</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
    <span class="kd">var</span> <span class="nx">defaultLat</span> <span class="o">=</span> <span class="mf">25.035255529260443</span><span class="p">;</span>
    <span class="kd">var</span> <span class="nx">defaultLng</span> <span class="o">=</span> <span class="mf">121.389524</span><span class="p">;</span>
    <span class="kd">var</span> <span class="nx">loc1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">defaultLat</span> <span class="p">,</span> <span class="nx">defaultLng</span><span class="p">);</span>
    <span class="kd">var</span> <span class="nx">loc</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">25.034225</span><span class="p">,</span><span class="mf">121.390168</span><span class="p">],[</span><span class="mf">25.032047</span><span class="p">,</span><span class="mf">121.386692</span><span class="p">],[</span><span class="mf">25.032514</span><span class="p">,</span> <span class="mf">121.390661</span><span class="p">]];</span>
-
    <span class="kd">var</span> <span class="nx">loctoLib</span><span class="o">=</span><span class="p">[[</span><span class="mf">25.035236</span><span class="p">,</span> <span class="mf">121.389524</span><span class="p">],[</span><span class="mf">25.034225</span><span class="p">,</span><span class="mf">121.390168</span><span class="p">]];</span>
-   <span class="kd">var</span> <span class="nx">loctoNSU</span><span class="o">=</span><span class="p">[[</span><span class="mf">25.035236</span><span class="p">,</span><span class="mf">121.389524</span><span class="p">],[</span><span class="mf">25.034750</span><span class="p">,</span><span class="mf">121.389245</span><span class="p">],[</span><span class="mf">25.033991</span><span class="p">,</span><span class="mf">121.388494</span><span class="p">],</span>
-                 <span class="p">[</span><span class="mf">25.034147</span><span class="p">,</span><span class="mf">121.388237</span><span class="p">],</span> <span class="p">[</span><span class="mf">25.033350</span><span class="p">,</span><span class="mf">121.387013</span><span class="p">],[</span><span class="mf">25.032125</span><span class="p">,</span><span class="mf">121.388022</span><span class="p">],</span>
-                 <span class="p">[</span><span class="mf">25.0317170</span><span class="p">,</span><span class="mf">121.387464</span><span class="p">],[</span><span class="mf">25.0319892</span><span class="p">,</span><span class="mf">121.386692</span><span class="p">]];</span>
    <span class="kd">var</span> <span class="nx">loctoPO</span><span class="o">=</span><span class="p">[[</span><span class="mf">25.035236</span><span class="p">,</span> <span class="mf">121.389524</span><span class="p">],[</span><span class="mf">25.032514</span><span class="p">,</span> <span class="mf">121.39066</span><span class="p">]];</span>
+
+   <span class="kd">var</span> <span class="nx">loctoNSU</span><span class="o">=</span><span class="p">[[</span><span class="mf">25.035236</span><span class="p">,</span><span class="mf">121.389524</span><span class="p">],[</span><span class="mf">25.034750</span><span class="p">,</span><span class="mf">121.389245</span><span class="p">],[</span><span class="mf">25.033991</span><span class="p">,</span><span class="mf">121.388494</span><span class="p">],[</span><span class="mf">25.034147</span><span class="p">,</span><span class="mf">121.388237</span><span class="p">],</span> <span class="p">[</span><span class="mf">25.033350</span><span class="p">,</span><span class="mf">121.387013</span><span class="p">],[</span><span class="mf">25.032125</span><span class="p">,</span><span class="mf">121.388022</span><span class="p">],[</span><span class="mf">25.0317170</span><span class="p">,</span><span class="mf">121.387464</span><span class="p">],</span>
+             <span class="p">[</span><span class="mf">25.0319892</span><span class="p">,</span><span class="mf">121.386692</span><span class="p">]];</span>
+
 
    <span class="kd">function</span> <span class="nx">initialize</span><span class="p">()</span> <span class="p">{</span>
       <span class="kd">var</span> <span class="nx">mapOptions</span> <span class="o">=</span> <span class="p">{</span>
@@ -22276,103 +22270,72 @@ document.getElementById(&#39;PosMenu&#39;).onchange = function() {
           <span class="nx">zoom</span><span class="o">:</span> <span class="nx">myZoom</span><span class="p">,</span>
           <span class="nx">mapTypeId</span><span class="o">:</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">MapTypeId</span><span class="p">.</span><span class="nx">ROADP</span>
       <span class="p">};</span>
-      <span class="c1">// create map</span>
       <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;map_canvas&quot;</span><span class="p">),</span><span class="nx">mapOptions</span><span class="p">);</span>
+      <span class="c1">// creates a draggable marker to the given coords   -3.118-3.118</span>
 
-      <span class="c1">// creates a draggable marker to the given coords    </span>
       <span class="kd">var</span> <span class="nx">myMarker</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Marker</span><span class="p">({</span>
-      <span class="nx">position</span><span class="o">:</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">defaultLat</span><span class="p">,</span> <span class="nx">defaultLng</span><span class="p">),</span>
-      <span class="nx">draggable</span><span class="o">:</span> <span class="nx">myMarkerIsDraggable</span>
-    <span class="p">});</span> 
+          <span class="nx">position</span><span class="o">:</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">defaultLat</span><span class="p">,</span> <span class="nx">defaultLng</span><span class="p">),</span>
+          <span class="nx">draggable</span><span class="o">:</span> <span class="nx">myMarkerIsDraggable</span>
+      <span class="p">});</span> 
 
-    <span class="c1">// waiting for service</span>
-    <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span><span class="nx">myMarker</span><span class="p">,</span> <span class="s1">&#39;dragend&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">){</span>  
-        <span class="kd">var</span> <span class="nx">newLat</span><span class="o">=</span><span class="nx">evt</span><span class="p">.</span><span class="nx">latLng</span><span class="p">.</span><span class="nx">lat</span><span class="p">().</span><span class="nx">toFixed</span><span class="p">(</span><span class="nx">myCoordsLenght</span><span class="p">);</span>
-        <span class="kd">var</span> <span class="nx">newLng</span><span class="o">=</span><span class="nx">evt</span><span class="p">.</span><span class="nx">latLng</span><span class="p">.</span><span class="nx">lng</span><span class="p">().</span><span class="nx">toFixed</span><span class="p">(</span><span class="nx">myCoordsLenght</span><span class="p">);</span>
-        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">newLat</span><span class="p">;</span>
-        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;longitude&#39;</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">newLng</span><span class="p">;</span>
-        <span class="kd">var</span> <span class="nx">loc2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">newLat</span><span class="p">,</span> <span class="nx">newLng</span><span class="p">);</span>
-        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;distanceAB&#39;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span>
-             <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">spherical</span><span class="p">.</span><span class="nx">computeDistanceBetween</span> <span class="p">(</span><span class="nx">loc1</span><span class="p">,</span> <span class="nx">loc2</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;  m&#39;</span><span class="p">;</span>
-    <span class="p">});</span>
+      <span class="c1">// centers the map on markers coords</span>
+      <span class="nx">map</span><span class="p">.</span><span class="nx">setCenter</span><span class="p">(</span><span class="nx">myMarker</span><span class="p">.</span><span class="nx">position</span><span class="p">);</span>
 
-    <span class="c1">// centers the map on markers coords</span>
-    <span class="nx">map</span><span class="p">.</span><span class="nx">setCenter</span><span class="p">(</span><span class="nx">myMarker</span><span class="p">.</span><span class="nx">position</span><span class="p">);</span>
+      <span class="c1">// adds the marker on the map</span>
+      <span class="nx">myMarker</span><span class="p">.</span><span class="nx">setMap</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+   <span class="p">}</span>
 
-    <span class="c1">//myPath.setMap(map);</span>
+   <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">addDomListener</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="nx">initialize</span><span class="p">);</span>
 
-    <span class="c1">// adds the marker on the map</span>
-    <span class="nx">myMarker</span><span class="p">.</span><span class="nx">setMap</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
-<span class="p">}</span>
+   <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;PosMenu&#39;</span><span class="p">).</span><span class="nx">onchange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span> <span class="c1">// array indices start at 0</span>
+      <span class="kd">var</span> <span class="nx">loc2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">loc</span><span class="p">[</span><span class="nx">index</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">loc</span><span class="p">[</span><span class="nx">index</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;distanceAC&#39;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span>
+         <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">spherical</span><span class="p">.</span><span class="nx">computeDistanceBetween</span> <span class="p">(</span><span class="nx">loc1</span><span class="p">,</span> <span class="nx">loc2</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;  m&#39;</span><span class="p">;</span>
+       <span class="kd">var</span> <span class="nx">newMarker</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Marker</span><span class="p">({</span>
+       <span class="nx">position</span><span class="o">:</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">loc</span><span class="p">[</span><span class="nx">index</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">loc</span><span class="p">[</span><span class="nx">index</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span>
+                <span class="nx">draggable</span><span class="o">:</span> <span class="nx">myMarkerIsDraggable</span>
+       <span class="p">});</span>
 
-<span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">addDomListener</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="nx">initialize</span><span class="p">);</span>
-
-<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;PosMenu&#39;</span><span class="p">).</span><span class="nx">onchange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span> <span class="c1">// array indices start at 0</span>
-  <span class="c1">//alert(loc[index][0]);</span>
-  <span class="kd">var</span> <span class="nx">loc2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">loc</span><span class="p">[</span><span class="nx">index</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">loc</span><span class="p">[</span><span class="nx">index</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;distanceAC&#39;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span>
-  <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">spherical</span><span class="p">.</span><span class="nx">computeDistanceBetween</span> <span class="p">(</span><span class="nx">loc1</span><span class="p">,</span> <span class="nx">loc2</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;  m&#39;</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">newMarker</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Marker</span><span class="p">({</span>
-    <span class="nx">position</span><span class="o">:</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">loc</span><span class="p">[</span><span class="nx">index</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">loc</span><span class="p">[</span><span class="nx">index</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span>
-    <span class="nx">draggable</span><span class="o">:</span> <span class="nx">myMarkerIsDraggable</span>
-  <span class="p">});</span>
-
-  <span class="c1">// centers the map on markers coords</span>
-  <span class="kd">var</span> <span class="nx">mapOptions</span> <span class="o">=</span> <span class="p">{</span>
+       <span class="c1">// centers the map on markers coords</span>
+       <span class="kd">var</span> <span class="nx">mapOptions</span> <span class="o">=</span> <span class="p">{</span>
           <span class="nx">center</span><span class="o">:</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">defaultLat</span><span class="p">,</span><span class="nx">defaultLng</span><span class="p">),</span>
           <span class="nx">zoom</span><span class="o">:</span> <span class="nx">myZoom</span><span class="p">,</span>
           <span class="nx">mapTypeId</span><span class="o">:</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">MapTypeId</span><span class="p">.</span><span class="nx">ROADP</span>
-    <span class="p">};</span>
+       <span class="p">};</span>
 
-   <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;map_canvas&quot;</span><span class="p">),</span><span class="nx">mapOptions</span><span class="p">)</span>
+       <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;map_canvas&quot;</span><span class="p">),</span><span class="nx">mapOptions</span><span class="p">)</span>
 
-   <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span><span class="nx">newMarker</span><span class="p">,</span> <span class="s1">&#39;dragend&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">){</span>  
-        <span class="kd">var</span> <span class="nx">newLat</span><span class="o">=</span><span class="nx">evt</span><span class="p">.</span><span class="nx">latLng</span><span class="p">.</span><span class="nx">lat</span><span class="p">();</span>
-        <span class="kd">var</span> <span class="nx">newLng</span><span class="o">=</span><span class="nx">evt</span><span class="p">.</span><span class="nx">latLng</span><span class="p">.</span><span class="nx">lng</span><span class="p">().</span><span class="nx">toFixed</span><span class="p">(</span><span class="nx">myCoordsLenght</span><span class="p">);</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">newLat</span><span class="p">;</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;longitude&#39;</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">newLng</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="nx">loc2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">newLat</span><span class="p">,</span> <span class="nx">newLng</span><span class="p">);</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;distanceAB&#39;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span>
-       <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">spherical</span><span class="p">.</span><span class="nx">computeDistanceBetween</span> <span class="p">(</span><span class="nx">loc1</span><span class="p">,</span> <span class="nx">loc2</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;  m&#39;</span><span class="p">;</span>
+       <span class="c1">// create the chosen tracjectory</span>
+       <span class="k">if</span> <span class="p">(</span><span class="nx">index</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">coord</span> <span class="o">=</span><span class="p">[];</span>
+          <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">loctoLib</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> 
+               <span class="nx">coord</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">loctoLib</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">loctoLib</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]));</span>
+          <span class="p">}</span>
+       <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">index</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">coord</span> <span class="o">=</span><span class="p">[];</span>
+          <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">loctoNSU</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> 
+              <span class="nx">coord</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">loctoNSU</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">loctoNSU</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]));</span>
+          <span class="p">}</span>
+       <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+         <span class="kd">var</span> <span class="nx">coord</span> <span class="o">=</span><span class="p">[];</span>
+         <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">loctoPO</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> 
+             <span class="nx">coord</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">loctoPO</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">loctoPO</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]));</span>
+         <span class="p">}</span>    
+       <span class="p">}</span>
 
-    <span class="p">});</span>
-  <span class="c1">// make the tracjectory</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">index</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-     <span class="c1">// Todo</span>
-     <span class="kd">var</span> <span class="nx">coord</span> <span class="o">=</span><span class="p">[];</span>
-     <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">loctoLib</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> 
-        <span class="nx">coord</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">loctoLib</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">loctoLib</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]));</span>
-        <span class="p">}</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">index</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-     <span class="kd">var</span> <span class="nx">coord</span> <span class="o">=</span><span class="p">[];</span>
-     <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">loctoNSU</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> 
-        <span class="nx">coord</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">loctoNSU</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">loctoNSU</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]));</span>
-        <span class="p">}</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="c1">//Todo</span>
-    <span class="kd">var</span> <span class="nx">coord</span> <span class="o">=</span><span class="p">[];</span>
-     <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">loctoPO</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> 
-        <span class="nx">coord</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="nx">loctoPO</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">loctoPO</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]));</span>
-        <span class="p">}</span>            
-  <span class="p">}</span>
+     <span class="kd">var</span> <span class="nx">TrajPath</span><span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Polyline</span><span class="p">({</span>
+         <span class="nx">path</span><span class="o">:</span> <span class="nx">coord</span><span class="p">,</span>
+         <span class="nx">geodesic</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="nx">strokeColor</span><span class="o">:</span> <span class="s1">&#39;#FF0000&#39;</span><span class="p">,</span>
+         <span class="nx">strokeOpacity</span><span class="o">:</span> <span class="mf">0.8</span><span class="p">,</span>
+         <span class="nx">strokeWeight</span><span class="o">:</span> <span class="mi">2</span>
+     <span class="p">});</span>
+     <span class="nx">TrajPath</span><span class="p">.</span><span class="nx">setMap</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
 
-   <span class="kd">var</span> <span class="nx">TrajPath</span><span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Polyline</span><span class="p">({</span>
-      <span class="nx">path</span><span class="o">:</span> <span class="nx">coord</span><span class="p">,</span>
-      <span class="nx">geodesic</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="nx">strokeColor</span><span class="o">:</span> <span class="s1">&#39;#FF0000&#39;</span><span class="p">,</span>
-      <span class="nx">strokeOpacity</span><span class="o">:</span> <span class="mf">0.8</span><span class="p">,</span>
-      <span class="nx">strokeWeight</span><span class="o">:</span> <span class="mi">2</span>
-    <span class="p">});</span>
-   <span class="nx">TrajPath</span><span class="p">.</span><span class="nx">setMap</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
-
-  <span class="c1">//map.setCenter(newMarker.position);</span>
-
-  <span class="c1">// adds the marker on the map</span>
-  <span class="nx">newMarker</span><span class="p">.</span><span class="nx">setMap</span><span class="p">(</span><span class="nx">map</span><span class="p">)</span>
-
-<span class="p">}</span>
-
+     <span class="c1">// adds the marker on the map</span>
+     <span class="nx">newMarker</span><span class="p">.</span><span class="nx">setMap</span><span class="p">(</span><span class="nx">map</span><span class="p">)</span>
+   <span class="p">}</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -22382,42 +22345,15 @@ document.getElementById(&#39;PosMenu&#39;).onchange = function() {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">IFrame</span>
-<span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s2">&quot;GPScoord-5.html&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;800px&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;600px&quot;</span> <span class="p">)</span>
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Result">Result<a class="anchor-link" href="#Result">&#182;</a></h2><p><img src="imgs/gmap-4.png" /></p>
 
 </div>
 </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-
-        <iframe
-            width="800px"
-            height="600px"
-            src="GPScoord-5.html"
-            frameborder="0"
-            allowfullscreen
-        ></iframe>
-        
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -22704,7 +22640,7 @@ document.getElementById(&#39;PosMenu&#39;).onchange = function() {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>jupyter nbconvert --to html GoogleMap.ipynb
@@ -22721,7 +22657,7 @@ document.getElementById(&#39;PosMenu&#39;).onchange = function() {
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[NbConvertApp] Converting notebook GoogleMap.ipynb to html
-[NbConvertApp] Writing 508061 bytes to GoogleMap.html
+[NbConvertApp] Writing 1148173 bytes to GoogleMap.html
 </pre>
 </div>
 </div>
